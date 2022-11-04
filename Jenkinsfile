@@ -2,7 +2,7 @@ pipeline {
     agent { docker { image 'python:3.10.7-alpine' } }
     environment {
     	TEST_VARIABLE = 'TEST'
-        BUILD= "TEST_BUILD"
+        TEST_BUILD= "TEST_BUILD"
     }
     stages {
         stage('build') {
