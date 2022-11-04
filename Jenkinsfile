@@ -10,11 +10,4 @@ pipeline {
             }
         }
     }
-    post{
-    	always{
-    		 mail to: 'jsiow002.dev@gmail.com',
-             subject: "First pipeline ",
-             body: "Test"
-    	}
-    }
 }
