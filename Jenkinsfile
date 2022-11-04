@@ -6,14 +6,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-            	echo "Test variable output is : ${TEST_VARIABLE}"
-                sh 'python --version'
+                sh './gradlew check'
             }
         }
     }
     post{
     	always{
-    		echo 'This will always be run'
+    		junit 'build/reports/**/*.xml'
     	}
     
     }
