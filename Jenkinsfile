@@ -4,8 +4,16 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'This is Build step'
             }
         }
+    }
+    post {
+    	always{
+    		echo 'This will always be run'
+    	}
+    	success{
+    		echo 'This will only run if successful'
+    	}
     }
 }
